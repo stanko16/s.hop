@@ -1,0 +1,60 @@
+
+    <div class="projects-clean">
+        <div class="container">
+            <div class="intro"></div>
+            <div class="row projects">
+
+
+			 <div>	  
+				  <table class="table">
+				  	<tr *ngFor="let cart_item of favourites" style="width:100%">
+				  		<td>
+				  			<img class="favourite_img" src="{{cart_item.item.gallery[0]}}" (click)="setCurrentItem(cart_item)" style="cursor:pointer;">
+				  		</td>
+				  		<td>
+				  			{{cart_item.item.title}}
+				  		</td>
+				  		<td>
+				  			{{cart_item.item.cost}}€
+				  		</td>
+				  		<td>
+				  			<button (click)="addToCart(cart_item)" class="btn btn-success">Add to cart</button>
+				  		</td>
+				  		<td>
+				  			<button (click)="deleteItem(cart_item)" class="btn btn-danger">Delete</button>
+				  		</td>
+				  	</tr>
+				  </table>
+			</div>
+
+			<div id="myModal" class="modal" *ngIf="item_selected" >
+
+					  <div class="modal-content">
+					  <div class="alert alert-success col-lg-12 col-md-12 col-sm-12 col-xs-12" [hidden]="added!=1">
+						  Item successfully added!
+					  	</div>
+					  	<div class="alert alert-warning col-lg-12 col-md-12 col-sm-12 col-xs-12" [hidden]="added!=-1">
+						  Item already added!
+					  	</div>
+					    <span class="close" (click)="resetCurrentItem()">&times;</span>
+
+
+						
+
+						<div id="lefty" class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+			    			 <div id="thumbs">
+			    			 	<img *ngFor="let image of current_item.gallery" src="{{image}}" (click)="setCurrentImage(image)" class="img-thumbnail">
+			    			 </div>
+			      		</div>
+
+					   <div id="left" class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+			    			 <img src="{{current_image}}" id="selected-img">
+			    			 
+			      		</div>
+					  </div>
+
+					</div>
+
+            </div>
+        </div>
+    </div>

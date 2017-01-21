@@ -1,0 +1,67 @@
+
+    <div class="projects-clean">
+        <div class="container">
+            <div class="intro"></div>
+            <div class="row projects">
+
+
+			 <div>
+				  <div *ngFor="let item of items" class="col-lg-3 col-md-4 col-sm-6 col-xs-12 item" >
+				  	<img class="img-responsive" src="{{item.gallery[0]}}" (click)="setCurrentItem(item)" style="cursor:pointer;">
+					<span id="name" class="title">{{item.title}}</span>
+				    <span id="price" class="title">{{item.cost}}€</span>
+			      </div>
+			</div>
+
+			<div id="myModal" class="modal" *ngIf="item_selected" >
+
+					  <div class="modal-content">
+					  <div class="alert alert-success col-lg-12 col-md-12 col-sm-12 col-xs-12" [hidden]="added!=1">
+						  Item successfully added!
+					  	</div>
+					  	<div class="alert alert-warning col-lg-12 col-md-12 col-sm-12 col-xs-12" [hidden]="added!=-1">
+						  Item already added!
+					  	</div>
+					    <span class="close" (click)="resetCurrentItem()">&times;</span>
+
+
+						
+
+						<div id="lefty" class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+			    			 <div id="thumbs">
+			    			 	<img *ngFor="let image of current_item.gallery" src="{{image}}" (click)="setCurrentImage(image)" class="img-thumbnail">
+			    			 </div>
+			      		</div>
+
+					   <div id="left" class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			    			 <img src="{{current_image}}" id="selected-img">
+			    			 
+			      		</div>
+
+			      		<div id="right" class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+				      		<span id="selected-title" class="title">{{current_item.title}}</span><br>
+						    <span id="selected-description">{{current_item.description}} </span><br>
+						    <span id="selected-price" class="title">{{current_item.cost}}€</span><br><br>
+						    <select [(ngModel)]="cart_item_size">
+						    	<option selected disabled>Size</option>
+							  	<option value="xxs" [disabled]="!current_item.sizes.xxs">xxs</option>
+								<option value="xs" [disabled]="!current_item.sizes.xs">xs</option> 
+								<option value="s" [disabled]="!current_item.sizes.s">s</option> 
+								<option value="m" [disabled]="!current_item.sizes.m">m</option> 
+								<option value="l" [disabled]="!current_item.sizes.l">l</option> 
+								<option value="xl" [disabled]="!current_item.sizes.xl">xl</option> 
+								<option value="xxl" [disabled]="!current_item.sizes.xxl">xxl</option> 
+								<option value="xxxl" [disabled]="!current_item.sizes.xxxl">xxxl</option> 
+							</select>
+							<br><br>
+							<button  (click)="addToCart(current_item)" class="btn btn-success">Add to cart</button>
+							<button (click)="addToFavourites(current_item)" class="btn btn-danger glyphicon glyphicon-heart-empty"></button>
+							<br><br>
+			      		</div>
+					  </div>
+
+					</div>
+
+            </div>
+        </div>
+    </div>

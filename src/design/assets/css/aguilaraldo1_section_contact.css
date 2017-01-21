@@ -1,0 +1,22 @@
+.icon-feature {
+  text-align:center;
+}
+
+.icon-feature .glyphicon {
+  font-size:60px;
+}
+
+section.features {
+  background:linear-gradient(135deg, #c970d7, #cc0363);
+  padding:40px 0;
+  color:#fff;
+}
+
+.features h2 {
+  color:#fff;
+}
+
+.features .icon-features {
+  margin-top:15px;
+}
+

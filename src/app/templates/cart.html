@@ -1,0 +1,61 @@
+
+    <div class="projects-clean">
+        <div class="container">
+            <div class="intro"></div>
+            <div class="row projects">
+
+
+			 <div>	  
+				  <table class="table">
+				  	<tr *ngFor="let cart_item of cart" style="width:100%">
+				  		<td>
+				  			<img class="favourite_img" src="{{cart_item.item.gallery[0]}}" (click)="setCurrentItem(cart_item)" style="cursor:pointer;">
+				  		</td>
+				  		<td>
+				  			{{cart_item.item.title}}
+				  		</td>
+				  		<td>
+				  			{{cart_item.item.cost*cart_item.amount | number : '1.2-2'}}€
+				  		</td>
+				  		<td>
+				  			{{cart_item.size}}
+				  		</td>
+				  		<td>
+				  			Quantity: 
+				  			<select>
+				  				<option (click)="setCartItemAmount(cart_item,1)" value="1">1</option>
+				  				<option (click)="setCartItemAmount(cart_item,2)" value="2">2</option>
+				  				<option (click)="setCartItemAmount(cart_item,3)" value="3">3</option>
+				  				<option (click)="setCartItemAmount(cart_item,4)" value="4">4</option>
+				  				<option (click)="setCartItemAmount(cart_item,5)" value="5">5</option>
+				  			</select>
+				  		</td>
+				  		<td>
+				  			<button (click)="deleteItem(cart_item)" class="btn btn-danger">Delete</button>
+				  		</td>
+				  	</tr>
+				  	<tr style="width:100%">
+				  		<td>
+				  			
+				  		</td>
+				  		<td>
+				  		</td>
+				  		<td>
+				  			Total:{{total| number : '1.2-2'}}€
+				  		</td>
+				  		<td>
+				  		</td>
+				  		<td>
+				  		</td>
+				  		<button (click)="sendOrder()" *ngIf="!orderSent" class="btn btn-primary">Send order</button>
+				  		<button class="btn btn-success" disabled *ngIf="orderSent">Order sent! :)</button>
+				  		<td>
+				  			
+				  		</td>
+				  	</tr>
+				  </table>
+			</div>
+
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>..:: s.hop ::..</title>
+    <link rel="stylesheet" href="./design/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./design/assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="./design/assets/css/Footer-Basic.css">
+    <link rel="stylesheet" href="./design/assets/css/Highlight-Blue.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+    <link rel="stylesheet" href="./design/assets/css/Navigation-Clean1.css">
+    <link rel="stylesheet" href="./design/assets/css/Projects-Clean.css">
+    <link rel="stylesheet" href="./design/assets/css/Simple-Slider.css">
+    <link rel="stylesheet" href="./design/assets/css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <!-- JavaScript imports -->
+    <script src="./design/assets/js/jquery.min.js"></script>
+    <script src="./design/assets/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Polyfill(s) for older browsers -->
+    <script src="./node_modules/core-js/client/shim.min.js"></script>
+
+    <script src="./app/data/items.js"></script>
+    <script src="./node_modules/zone.js/dist/zone.js"></script>
+    <script src="./node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="./node_modules/systemjs/dist/system.js"></script>
+    <script src="./node_modules/systemjs/dist/system.src.js"></script>
+    <script src="https://code.angularjs.org/tools/system.js"></script>
+     <script src="http://requirejs.org/docs/release/2.2.0/minified/require.js"></script>
+    <script>
+        System.config({
+            packages: {
+                app: {
+                    format: 'register',
+                    defaultExtension: 'js'
+                }
+            }
+        });
+        System.import('app/main').then(null, console.error.bind(console));
+    </script>
+<link href="styles.d41d8cd98f00b204e980.bundle.css" rel="stylesheet"/></head>
+
+<body>
+<base href="/">
+    <div id="navigation">
+        <nav class="navbar navbar-default navigation-clean">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                </div>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li role="presentation">
+                          <a href="/"> 
+                           <i class="glyphicon glyphicon-home"></i>
+                          </a>
+                        </li>
+                        <li role="presentation">
+
+                            <a href="/favourites"> <i class="glyphicon glyphicon-heart-empty"></i></a>
+                        </li>
+                        <li role="presentation"><a href="/cart"><i class="glyphicon glyphicon-shopping-cart"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+<div class="highlight-blue">
+    <div class="container" id="header">
+        <div class="intro">
+            <h2 class="text-center">..:: s.hop ::.. </h2>
+            <p class="text-center">Your (un) usual shop</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+                <my-app>
+                  <div class="outer">
+                    <div class="middle">
+                      <div class="inner">
+
+                        <img src="./app/js/data/loading_cart.gif">
+
+                      </div>
+                    </div>
+                  </div>
+                </my-app>
+
+
+
+
+
+    <div class="footer-basic">
+        <footer>
+            <div class="social"><a href="https://www.linkedin.com/in/stanko-ovkaric"><i class="fa fa-linkedin"></i></a><a href="https://www.xing.com/profile/StankoFranz_Ovkaric"><i class="fa fa-xing"></i></a></div>
+            <ul class="list-inline">
+                <li><a href="/">Home</a></li>
+                <li><a href="/favourites">Favourites </a></li>
+                <li><a href="/cart">Shopping Cart </a></li>
+            </ul>
+            <p class="copyright"><a style="text-decoration: none;" href="http://www.StankoOvkaric.com">Stanko Ovkaric 2017</a></p>
+            <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+        </footer>
+    </div>
+
+
+<script type="text/javascript" src="inline.2666f051ec92ed12385c.bundle.js"></script><script type="text/javascript" src="vendor.fdb0a037698001f7e2c4.bundle.js"></script><script type="text/javascript" src="main.c71f3eebe2e9e2cd2322.bundle.js"></script></body>
+
+</html>
